@@ -1,4 +1,4 @@
-function Grid(size) {
+﻿function Grid(size) {
   this.size = size;
 
   this.cells = [];

@@ -1,4 +1,4 @@
-function GameManager(size, InputManager, Actuator, ScoreManager) {
+锘縡unction GameManager(size, InputManager, Actuator, ScoreManager) {
   this.size         = size; // Size of the grid
   this.inputManager = new InputManager;
   this.scoreManager = new ScoreManager;
@@ -59,7 +59,7 @@ GameManager.prototype.addStartTiles = function () {
 // Adds a tile in a random position
 GameManager.prototype.addRandomTile = function () {
   if (this.grid.cellsAvailable()) {
-    var value = Math.random() < 0.9 ? "少尉" : "中尉";
+    var value = Math.random() < 0.9 ? "灏戝皦" : "涓皦";
     var tile = new Tile(this.grid.randomAvailableCell(), value);
 
     this.grid.insertTile(tile);
@@ -129,27 +129,27 @@ GameManager.prototype.move = function (direction) {
 	
         if (next && next.value === tile.value && !next.mergedFrom) {
 	    var nextname = "";
-	    if(tile.value == "少尉"){
-		    nextname = "中尉";
-	    }else if(tile.value == "中尉"){
-		    nextname = "上尉";
-	    }else if(tile.value == "上尉"){
-		    nextname = "少校";
-	    }else if(tile.value == "少校"){
-		    nextname = "中校";
-	    }else if(tile.value == "中校"){
-		    nextname = "上校";
-	    }else if(tile.value == "上校"){
-		    nextname = "大校";
-	    }else if(tile.value == "大校"){
-		    nextname = "少将";
-	    }else if(tile.value == "少将"){
-		    nextname = "中将";
-	    }else if(tile.value == "中将"){
-		    nextname = "上将";
-	    }else if(tile.value == "上将"){
-		    nextname = "司令";
-	    }else if(tile.value == "司令"){
+	    if(tile.value == "灏戝皦"){
+		    nextname = "涓皦";
+	    }else if(tile.value == "涓皦"){
+		    nextname = "涓婂皦";
+	    }else if(tile.value == "涓婂皦"){
+		    nextname = "灏戞牎";
+	    }else if(tile.value == "灏戞牎"){
+		    nextname = "涓牎";
+	    }else if(tile.value == "涓牎"){
+		    nextname = "涓婃牎";
+	    }else if(tile.value == "涓婃牎"){
+		    nextname = "澶ф牎";
+	    }else if(tile.value == "澶ф牎"){
+		    nextname = "灏戝皢";
+	    }else if(tile.value == "灏戝皢"){
+		    nextname = "涓皢";
+	    }else if(tile.value == "涓皢"){
+		    nextname = "涓婂皢";
+	    }else if(tile.value == "涓婂皢"){
+		    nextname = "鍙镐护";
+	    }else if(tile.value == "鍙镐护"){
 		    nextname = "ET";
 	    }else{
 		    nextname = "ET";
@@ -164,27 +164,27 @@ GameManager.prototype.move = function (direction) {
           tile.updatePosition(positions.next);
 
           // Update the score
-	    if(tile.value == "少尉"){
+	    if(tile.value == "灏戝皦"){
 		    self.score += 2;
-	    }else if(tile.value == "中尉"){
+	    }else if(tile.value == "涓皦"){
 		    self.score += 4;
-	    }else if(tile.value == "上尉"){
+	    }else if(tile.value == "涓婂皦"){
 		    self.score += 8;
-	    }else if(tile.value == "少校"){
+	    }else if(tile.value == "灏戞牎"){
 		    self.score += 16;
-	    }else if(tile.value == "中校"){
+	    }else if(tile.value == "涓牎"){
 		    self.score += 32;
-	    }else if(tile.value == "上校"){
+	    }else if(tile.value == "涓婃牎"){
 		    self.score += 64;
-	    }else if(tile.value == "大校"){
+	    }else if(tile.value == "澶ф牎"){
 		    self.score += 128;
-	    }else if(tile.value == "少将"){
+	    }else if(tile.value == "灏戝皢"){
 		    self.score += 256;
-	    }else if(tile.value == "中将"){
+	    }else if(tile.value == "涓皢"){
 		    self.score += 512;
-	    }else if(tile.value == "上将"){
+	    }else if(tile.value == "涓婂皢"){
 		    self.score += 1024;
-	    }else if(tile.value == "司令"){
+	    }else if(tile.value == "鍙镐护"){
 		    self.score += 2048;
 	    }else{
 		    self.score += 4096;
@@ -192,7 +192,7 @@ GameManager.prototype.move = function (direction) {
           
 
           // The mighty 2048 tile
-          if (merged.value === "司令") self.won = true;
+          if (merged.value === "鍙镐护") self.won = true;
         } else {
           self.moveTile(tile, positions.farthest);
         }
